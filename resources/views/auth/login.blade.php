@@ -3,6 +3,7 @@
 {{-- @section('content') --}}
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,7 +11,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Login</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -20,21 +21,34 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <style>
-    .page1{
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+    }
+
+    .full-height {
+        height: 100%;
+    }
+
+    .page1 {
         background-color: #19944f;
     }
-    .page2{
+
+    .page2 {
         background-color: #ffff;
     }
-    .btn-primary{
+
+    .btn-primary {
         background-color: #19944f;
         border: none;
     }
-    .btn-primary:hover{
+
+    .btn-primary:hover {
         background-color: #19944f;
     }
-    .text-green
-    {
+
+    .text-green {
         color: #19944f;
     }
 </style>
@@ -107,66 +121,75 @@
         </div>
     </div>
 </div> --}}
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-6 page1" style="height: 1000px">
-            <nav class="m-3"><img src="{{asset("images/logo.png")}}" alt="" width="90"></nav>
+<div class="container-fluid full-height">
+    <div class="row full-height">
+        <div class="col-6 page1">
+            <nav class="m-3"><img src="{{ asset('images/logo.png') }}" alt="" width="90"></nav>
             <div class="text-center" style="margin-top: 25%">
                 <h2 class="text-light">Haven't Signed Up?</h2>
                 <h5 class="text-dark">*No Credut card required</h5>
-                <a href="{{url('register')}}" class="btn btn-light text-uppercase text-green px-3 py-2 mt-3">create account</a>
+                <a href="{{ url('register') }}" class="btn btn-light text-uppercase text-green px-3 py-2 mt-3">create
+                    account</a>
             </div>
         </div>
         {{--  --}}
+        <img src="images/logo.png" class="d-inline-flex" alt="">
         <div class="col-6 page2">
             <div style="margin-top: 30%">
-                    <main class="text-center">
-                        <div>
-                            <h2 class="text-green">Employee Login</h2>
-                        </div>
-                        <div class="container-fluid">
-                            <div class="mt-4">
-                        <form method="POST" action="{{ route('login') }}">
-                            @csrf
-                            <div class="row mb-3">
-                                <div>
-                                    <input id="email" type="email" class="form-control py-3 @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Company Emain">
+                <main class="text-center">
+                    <div>
+                        <h2 class="text-green">Employee Login</h2>
+                    </div>
+                    <div class="container-fluid">
+                        <div class="mt-4">
+                            <form method="POST" action="{{ route('login') }}">
+                                @csrf
+                                <div class="row mb-3">
+                                    <div>
+                                        <input id="email" type="email"
+                                            class="form-control py-3 @error('email') is-invalid @enderror"
+                                            name="email" value="{{ old('email') }}" required autocomplete="email"
+                                            autofocus placeholder="Company Emain">
 
-                                    @error('email')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
+                                        @error('email')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row mb-3">
-                                <div>
-                                    <input id="password" type="password" class="form-control py-3 @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Password">
+                                <div class="row mb-3">
+                                    <div>
+                                        <input id="password" type="password"
+                                            class="form-control py-3 @error('password') is-invalid @enderror"
+                                            name="password" required autocomplete="current-password"
+                                            placeholder="Password">
 
-                                    @error('password')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
+                                        @error('password')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
                                 </div>
-                            </div>
-                    </main>
-                    <div class="mx-3">
-                        <h5 class="text-uppercase">problem in singing up</h5>
-                    </div>
-                    <div class="mx-3 my-2">
-                        <a href="#" class="text-uppercase text-green">reset password</a> <span class="text-uppercase">or call our support</span>
-                    </div>
-                    <div class="mx-3">
-                        <span class="text-uppercase">line:</span> <a href="#" class="text-green">+923333321</a>
-                    </div>
-                    <div class="row">
-                       <div class="col-12">
+                </main>
+                <div class="mx-3">
+                    <h5 class="text-uppercase">problem in singing up</h5>
+                </div>
+                <div class="mx-3 my-2">
+                    <a href="#" class="text-uppercase text-green">reset password</a> <span
+                        class="text-uppercase">or call our support</span>
+                </div>
+                <div class="mx-3">
+                    <span class="text-uppercase">line:</span> <a href="#" class="text-green">+923333321</a>
+                </div>
+                <div class="row">
+                    <div class="col-12">
                         <button type="submit" class="btn btn-primary float-end text-uppercase px-5 py-3">
                             {{ __('Login') }}
                         </button>
-                       </div>
                     </div>
+                </div>
                 </form>
             </div>
         </div>
