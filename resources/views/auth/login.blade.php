@@ -133,7 +133,7 @@
             </div>
         </div>
         {{--  --}}
-        <img src="images/logo.png" class="d-inline-flex" alt="">
+        {{-- <img src="images/logo.png" class="d-inline-flex" alt=""> --}}
         <div class="col-6 page2">
             <div style="margin-top: 30%">
                 <main class="text-center">
