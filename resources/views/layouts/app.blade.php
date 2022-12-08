@@ -41,6 +41,17 @@
         right: 0;
         bottom: 0;
     }
+    /* media */
+    @media screen and (max-width: 1440px) {
+        .left {
+        position: absolute;
+        left: 0;
+        top: 64px;
+        bottom: 0;
+        width: 255px;
+        background-color: #47AF7C;
+    }
+}
 
     .secondary {
         background-color: #47745E;
