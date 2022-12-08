@@ -18,6 +18,10 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <style>
+    html {
+        height: 100%;
+    }
+
     .top {
         position: absolute;
         left: 0;
@@ -32,26 +36,36 @@
         bottom: 0;
         width: 255px;
         background-color: #47AF7C;
+        position: fixed;
+        height: 100%;
+        overflow: hidden;
+        box-sizing: border-box;
     }
 
     .main {
         position: absolute;
-        left: 178px;
-        top: 92px;
+        left: 255px;
+        top: 70px;
         right: 0;
         bottom: 0;
+        flex-grow: 1;
+        overflow-y: auto;
     }
+
     /* media */
     @media screen and (max-width: 1440px) {
         .left {
-        position: absolute;
-        left: 0;
-        top: 64px;
-        bottom: 0;
-        width: 255px;
-        background-color: #47AF7C;
+            position: absolute;
+            left: 0;
+            top: 71px;
+            bottom: 0;
+            width: 255px;
+            background-color: #47AF7C;
+            position: fixed;
+            height: 100%;
+            overflow: hidden;
+        }
     }
-}
 
     .secondary {
         background-color: #47745E;
@@ -67,7 +81,8 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light secondary shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light secondary shadow-sm"
+            style="position:fixed; overflow:auto; width:100%">
             <a class="navbar-brand mx-3" href="{{ url('/') }}">
                 {{-- {{ config('app.name', 'Laravel') }} --}}
                 <img src="{{ asset('images/logo.png') }}" alt="" width="90">
