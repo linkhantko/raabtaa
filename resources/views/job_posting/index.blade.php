@@ -5,14 +5,16 @@
         <label for="" class="text-light text-uppercase">Job posting</label>
     </div>
     <div class="m-4">
-        {{-- <img src="{{ asset('images/circle.png') }}" width="15" alt=""> --}}
-        <div style="border: solid;border-radius:100px;display: inline-grid;padding: 4px; border-color: white;"></div>
-        <label for="" class="text-light text-uppercase mx-2">Post a New Job</label>
+        <a href="{{ url('new_job') }}">
+            <div style="border: solid;border-radius:100px;display: inline-grid;padding: 4px; border-color: white;"></div>
+            <label for="" class="text-light text-uppercase mx-2">Post a New Job</label>
+        </a>
     </div>
     <div class="m-4">
-        {{-- <img src="{{ asset('images/circle.png') }}" width="15" alt=""> --}}
-        <div style="border: solid;border-radius:100px;display: inline-grid;padding: 4px; border-color: white;"></div>
-        <label for="" class="text-light text-uppercase mx-2">Home</label>
+        <a href="{{ url('home') }}">
+            <div style="border: solid;border-radius:100px;display: inline-grid;padding: 4px; border-color: white;"></div>
+            <label for="" class="text-light text-uppercase mx-2">Home</label>
+        </a>
     </div>
 @endsection
 @section('content')

@@ -27,3 +27,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/job_posting', [App\Http\Controllers\HomeController::class, 'show'])->name('job_posting');
+
+Route::get('/new_job', function () {
+    return view('job_posting.new_job');
+});

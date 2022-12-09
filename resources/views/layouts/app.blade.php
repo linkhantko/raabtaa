@@ -82,7 +82,7 @@
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light secondary shadow-sm"
-            style="position:fixed; overflow:auto; width:100%">
+            style="position:fixed; overflow:auto; width:100%; z-index: 1; overflow-y: scroll;">
             <a class="navbar-brand mx-3" href="{{ url('/') }}">
                 {{-- {{ config('app.name', 'Laravel') }} --}}
                 <img src="{{ asset('images/logo.png') }}" alt="" width="90">
