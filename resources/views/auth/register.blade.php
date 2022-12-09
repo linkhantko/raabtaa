@@ -47,10 +47,32 @@
 
     .page1 {
         background-color: #19944f;
+        display: block;
     }
 
     .page2 {
+
         background-color: #ffff;
+        display: block;
+    }
+
+    .page1,
+    ::after {
+        background-image: url('images/watermark.png');
+        background-repeat: no-repeat;
+        background-position: bottom 50px left 380px;
+    }
+
+    .page2,
+    ::after {
+        content: "";
+        background-image: url('images/watermark.png');
+        background-repeat: no-repeat;
+        background-position: bottom 46px right 377px;
+        z-index: 0;
+        opacity: 0.9;
+        /* position: absolute; */
+
     }
 
     .btn-primary {

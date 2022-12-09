@@ -33,10 +33,31 @@
 
     .page1 {
         background-color: #19944f;
+        display: block;
     }
 
     .page2 {
         background-color: #ffff;
+        display: block;
+    }
+
+    .page1,
+    ::after {
+        background-image: url('images/watermark.png');
+        background-repeat: no-repeat;
+        background-position: bottom 50px left 380px;
+    }
+
+    .page2,
+    ::after {
+        content: "";
+        background-image: url('images/watermark.png');
+        background-repeat: no-repeat;
+        background-position: bottom 46px right 377px;
+        z-index: 0;
+        /* opacity: 0.5; */
+        /* position: absolute; */
+
     }
 
     .btn-primary {
@@ -122,7 +143,7 @@
     </div>
 </div> --}}
 <div class="container-fluid full-height">
-    <div class="row full-height">
+    <div class="row full-height login">
         <div class="col-6 page1">
             <nav class="m-3"><img src="{{ asset('images/logo.png') }}" alt="" width="90"></nav>
             <div class="text-center" style="margin-top: 25%">
@@ -133,9 +154,8 @@
             </div>
         </div>
         {{--  --}}
-        {{-- <img src="images/logo.png" class="d-inline-flex" alt=""> --}}
         <div class="col-6 page2">
-            <div style="margin-top: 30%">
+            <div style="margin-top: 30%; z-index: 99;">
                 <main class="text-center">
                     <div>
                         <h2 class="text-green">Employee Login</h2>
@@ -177,11 +197,11 @@
                     <h5 class="text-uppercase">problem in singing up</h5>
                 </div>
                 <div class="mx-3 my-2">
-                    <a href="#" class="text-uppercase text-green">reset password</a> <span
+                    <a href="#" class="text-uppercase text-dark">reset password</a> <span
                         class="text-uppercase">or call our support</span>
                 </div>
                 <div class="mx-3">
-                    <span class="text-uppercase">line:</span> <a href="#" class="text-green">+923333321</a>
+                    <span class="text-uppercase">line:</span> <a href="#" class="text-dark">+923333321</a>
                 </div>
                 <div class="row">
                     <div class="col-12">

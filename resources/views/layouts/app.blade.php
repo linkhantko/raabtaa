@@ -29,6 +29,11 @@
         height: 92px;
     }
 
+    .bottom {
+        left: 255;
+        height: 92px;
+    }
+
     .left {
         position: absolute;
         left: 0;
@@ -49,7 +54,6 @@
         right: 0;
         bottom: 0;
         flex-grow: 1;
-        overflow-y: auto;
     }
 
     /* media */
@@ -76,6 +80,69 @@
         bottom: 22px;
         left: 15px;
         margin-left: 10px;
+    }
+
+    input,
+    textarea {
+        border: 1px solid #eeeeee;
+        box-sizing: border-box;
+        margin: 0;
+        outline: none;
+        padding: 10px;
+    }
+
+    input[type="button"] {
+        -webkit-appearance: button;
+        cursor: pointer;
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
+
+    .input-group {
+        clear: both;
+        margin: 15px 0;
+        position: relative;
+    }
+
+    .input-group input[type='button'] {
+        background-color: #eeeeee;
+        min-width: 38px;
+        width: auto;
+        transition: all 300ms ease;
+        margin: 10px;
+    }
+
+    .input-group .button-minus,
+    .input-group .button-plus {
+        font-weight: bold;
+        height: 38px;
+        padding: 0;
+        width: 38px;
+        position: relative;
+    }
+
+    .input-group .quantity-field {
+        position: relative;
+        height: 38px;
+        left: -6px;
+        text-align: center;
+        width: 62px;
+        display: inline-block;
+        font-size: 13px;
+        margin: 0 0 5px;
+        resize: vertical;
+    }
+
+    .button-plus {
+        left: -13px;
+    }
+
+    input[type="number"] {
+        -moz-appearance: textfield;
+        -webkit-appearance: none;
     }
 </style>
 
