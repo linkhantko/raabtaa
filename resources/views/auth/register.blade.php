@@ -74,6 +74,7 @@
         /* position: absolute; */
 
     }
+
     @media all and (max-width: 1900px) {
         .left {
             position: absolute;
@@ -86,24 +87,25 @@
             height: 100%;
             overflow: hidden;
         }
+
         .page1,
-    ::after {
-        /* background-image: url('images/watermark.png'); */
-        background-repeat: no-repeat;
-        background-position: bottom 50px left 136px;
-    }
+        ::after {
+            /* background-image: url('images/watermark.png'); */
+            background-repeat: no-repeat;
+            background-position: bottom 50px left 136px;
+        }
 
-    .page2,
-    ::after {
-        content: "";
-        background-image: url('images/watermark.png');
-        background-repeat: no-repeat;
-        background-position: bottom 46px right 136px;
-        z-index: 0;
-        /* opacity: 0.5; */
-        /* position: absolute; */
+        .page2,
+        ::after {
+            content: "";
+            background-image: url('images/watermark.png');
+            background-repeat: no-repeat;
+            background-position: bottom 46px right 136px;
+            z-index: 0;
+            /* opacity: 0.5; */
+            /* position: absolute; */
 
-    }
+        }
     }
 
     .btn-primary {
@@ -117,6 +119,33 @@
 
     .text-green {
         color: #19944f;
+    }
+
+    /* file upload */
+    .file-upload {
+        position: relative;
+        overflow: hidden;
+        margin: 10px;
+        width: 100px;
+        height: 100px;
+        background-color: #eee;
+        border: 2px solid #ddd;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .file-upload input.upload {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 0;
+        padding: 0;
+        font-size: 20px;
+        cursor: pointer;
+        opacity: 0;
+        filter: alpha(opacity=0);
+        height: 100%;
+        width: 100%;
     }
 </style>
 <div class="container-fluid full-height">
@@ -139,13 +168,18 @@
         <div class="col-6 page2">
             <div style="margin-top: 10%">
                 <main class="text-center">
-                    <div>
-                        <h2 class="text-green">Employer Sign Up</h2>
-                        <h5>*No credit card required</h5>
-                        <h5 class="text-uppercase">CHOOSE COMPANY LOGO FROM <span class="text-green">GALLERY</span></h5>
-                    </div>
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
+                        <div>
+                            <h2 class="text-green">Employer Sign Up</h2>
+                            <h5>*No credit card required</h5>
+                            <div class="file-upload btn btn-primary">
+                                <span><img src="{{ asset('images/profile.png') }}" alt=""></span>
+                                <input type="file" class="upload" id="upload-btn" name="file">
+                            </div>
+                            <h5 class="text-uppercase">CHOOSE COMPANY LOGO FROM <span class="text-green">GALLERY</span>
+                            </h5>
+                        </div>
                         <div class="container-fluid">
                             <div class="row mb-3">
                                 <div>
@@ -279,4 +313,15 @@
         {{--  --}}
     </div>
 </div>
+<script>
+    $('.upload').each(function() {
+        var $t = $(this),
+            $span = $t.siblings('span'),
+            value;
+        $t.change(function() {
+            value = $t.val();
+            $span.text(value);
+        });
+    });
+</script>
 {{-- @endsection --}}
