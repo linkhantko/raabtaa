@@ -121,7 +121,7 @@
                                     <input id="name" type="text"
                                         class="form-control py-3 @error('name') is-invalid @enderror" name="name"
                                         value="{{ old('name') }}" required autocomplete="name" autofocus
-                                        placeholder="Company Name">
+                                        placeholder="Company Name" style="opacity: 0.9">
 
                                     @error('name')
                                         <span class="invalid-feedback" role="alert">
@@ -136,7 +136,7 @@
                                     <input id="email" type="email"
                                         class="form-control py-3 @error('email') is-invalid @enderror" name="email"
                                         value="{{ old('email') }}" required autocomplete="email"
-                                        placeholder="Company Email">
+                                        placeholder="Company Email" style="opacity: 0.9">
 
                                     @error('email')
                                         <span class="invalid-feedback" role="alert">
@@ -151,7 +151,8 @@
                                 <div>
                                     <input id="phone" type="text"
                                         class="form-control py-3 @error('phone') is-invalid @enderror" name="phone"
-                                        value="{{ old('phone') }}" required autocomplete="phone" placeholder="Phone">
+                                        value="{{ old('phone') }}" required autocomplete="phone" placeholder="Phone"
+                                        style="opacity: 0.9">
 
                                     @error('phone')
                                         <span class="invalid-feedback" role="alert">
@@ -164,7 +165,8 @@
                                 <div>
                                     <select name="city" id="city" value="{{ old('city') }}" required
                                         autocomplete="email" placeholder="City"
-                                        class="form-control py-3 @error('city') is-invalid @enderror">
+                                        class="form-control py-3 @error('city') is-invalid @enderror"
+                                        style="opacity: 0.9">
                                         <option value="">Area</option>
                                         <option value="yangon">Yangon</option>
                                         <option value="mandalay">Mandalay</option>
@@ -181,7 +183,8 @@
                                 <div>
 
                                     <select name="area" id="area" value="{{ old('area') }}" required
-                                        class="form-control py-3 @error('area') is-invalid @enderror">
+                                        class="form-control py-3 @error('area') is-invalid @enderror"
+                                        style="opacity: 0.9">
                                         <option value="">City</option>
                                         <option value="yangon">Yangon</option>
                                         <option value="mandalay">Mandalay</option>
@@ -198,7 +201,8 @@
 
                             <div class="row mb-3">
                                 <div>
-                                    <textarea name="address" id="address" cols="3" rows="3" placeholder="Address" class="form-control"></textarea>
+                                    <textarea name="address" id="address" cols="3" rows="3" placeholder="Address" class="form-control"
+                                        style="opacity: 0.9"></textarea>
 
                                     @error('address')
                                         <span class="invalid-feedback" role="alert">
@@ -213,7 +217,8 @@
                                 <div class="col-6">
                                     <input id="password" type="password"
                                         class="form-control py-3 @error('password') is-invalid @enderror"
-                                        name="password" required autocomplete="new-password" placeholder="Password">
+                                        name="password" required autocomplete="new-password" placeholder="Password"
+                                        style="opacity: 0.9">
 
                                     @error('password')
                                         <span class="invalid-feedback" role="alert">
@@ -225,7 +230,7 @@
                                 <div class="col-6">
                                     <input id="password-confirm" type="password" class="form-control py-3"
                                         name="password_confirmation" required autocomplete="new-password"
-                                        placeholder="Confirm Password">
+                                        placeholder="Confirm Password" style="opacity: 0.9">
                                 </div>
                             </div>
                             <div class="row float-end">

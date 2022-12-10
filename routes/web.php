@@ -31,3 +31,6 @@ Route::get('/job_posting', [App\Http\Controllers\HomeController::class, 'show'])
 Route::get('/new_job', function () {
     return view('job_posting.new_job');
 });
+Route::get('/new_job2', function () {
+    return view('job_posting.new_job2');
+});

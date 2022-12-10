@@ -56,7 +56,7 @@
                     </div>
                     <div class="col-9">
                         <label class="form-check-label" for="flexCheckCheckedDisabled">
-                            Screening Question
+                            Point of Contact
                         </label>
                     </div>
                 </div>
@@ -71,7 +71,7 @@
                     </div>
                     <div class="col-9">
                         <label class="form-check-label" for="flexCheckCheckedDisabled">
-                            Screening Question
+                            Employment
                         </label>
                     </div>
                 </div>
@@ -262,15 +262,16 @@
 
     <div class="bottom fixed-bottom mt-5">
         <div class="float-end">
-            <a href="" class="btn btn-light mt-4 text-uppercase text-dark shadow-lg p-3">
+            <a href="{{ url('job_posting') }}" class="btn btn-light mt-4 text-uppercase text-dark shadow-lg p-3">
                 Cancel
             </a>
-            <a href="" class="btn btn-success mt-4 mx-4 text-uppercase text-light shadow-lg p-3">
+            <a href="{{ url('new_job2') }}" class="btn btn-success mt-4 mx-4 text-uppercase text-light shadow-lg p-3">
                 Continue
             </a>
         </div>
     </div>
 @section('javascript')
+
     <script>
         function incrementValue(e) {
             e.preventDefault();
