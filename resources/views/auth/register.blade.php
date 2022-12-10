@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    
+
                 </div>
             </div>
         </div>
@@ -73,6 +73,37 @@
         opacity: 0.9;
         /* position: absolute; */
 
+    }
+    @media all and (max-width: 1900px) {
+        .left {
+            position: absolute;
+            left: 0;
+            top: 64px;
+            bottom: 0;
+            width: 255px;
+            background-color: #47AF7C;
+            position: fixed;
+            height: 100%;
+            overflow: hidden;
+        }
+        .page1,
+    ::after {
+        /* background-image: url('images/watermark.png'); */
+        background-repeat: no-repeat;
+        background-position: bottom 50px left 136px;
+    }
+
+    .page2,
+    ::after {
+        content: "";
+        background-image: url('images/watermark.png');
+        background-repeat: no-repeat;
+        background-position: bottom 46px right 136px;
+        z-index: 0;
+        /* opacity: 0.5; */
+        /* position: absolute; */
+
+    }
     }
 
     .btn-primary {
