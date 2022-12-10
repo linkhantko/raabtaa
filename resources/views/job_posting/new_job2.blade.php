@@ -38,7 +38,7 @@
                 <div class="row my-1">
                     <div class="col-3">
                         <span style="margin-left: 15px;">
-                            <input class="form-check-input" type="checkbox" value="" id="" disabled
+                            <input class="form-check-input" type="checkbox" value="" id="" checked disabled
                                 style="background-color: #47AF7C; border-color:#47AF7C;">
                         </span>
                     </div>

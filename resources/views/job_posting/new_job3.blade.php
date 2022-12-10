@@ -39,7 +39,7 @@
                 <div class="row my-1">
                     <div class="col-3">
                         <span style="margin-left: 15px;">
-                            <input class="form-check-input" type="checkbox" value="" id="" disabled
+                            <input class="form-check-input" type="checkbox" value="" id="" checked disabled
                                 style="background-color: #47AF7C; border-color:#47AF7C;">
                         </span>
                     </div>
@@ -54,7 +54,7 @@
                 <div class="row my-1">
                     <div class="col-3">
                         <span style="margin-left: 15px;">
-                            <input class="form-check-input" type="checkbox" value="" id="" disabled
+                            <input class="form-check-input" type="checkbox" value="" id="" checked disabled
                                 style="background-color: #47AF7C; border-color:#47AF7C;">
                         </span>
                     </div>
@@ -84,7 +84,7 @@
     </div>
 @endsection
 @section('content')
-    <div class="container mx-3 main mt-3">
+    <div class="container-fluit mx-3 main mt-3">
         <div>
             <div class="m-3">
                 <div class="form-check">
@@ -126,7 +126,7 @@
                     <input type="text" class="form-control" placeholder="Area">
                 </div>
             </div>
-            <textarea name="" id="" class="form-control" rows="4" placeholder="Address"></textarea>
+                <textarea name="" id="" class="form-control" cols="3" rows="4" placeholder="Address"></textarea>
             <div class="m-3">
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
@@ -138,7 +138,7 @@
         </div>
     </div>
 
-    <div class="bottom fixed-bottom mt-5">
+    <div class="bottom fixed-bottom mt-5" style="z-index: 1;">
         <div class="float-end">
             <a href="{{ url('new_job2') }}" class="btn btn-light mt-4 text-uppercase text-dark shadow-lg p-3">
                 Cancel
