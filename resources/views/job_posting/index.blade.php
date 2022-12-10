@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('status')
-Job Posting
+    {{ $jobs->count() }} Job Posting
 @endsection
 @section('side')
     <div class="m-4">

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('status')
-    Point of contact details
-    <p class="h6">Who would be connecting with candudate and hire them for this Job?</p>
+    Employment Contract
+    <p class="h6">Legally binding agreement for the job that is being offered to the worker.</p>
 @endsection
 @section('side')
     <div class="card mx-2 my-4">
@@ -85,54 +85,32 @@
 @endsection
 @section('content')
     <div class="container mx-3 main mt-3">
-        <div>
-            <div class="m-3">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
-                    <label class="form-check-label mx-3" for="flexCheckIndeterminate">
-                        Let applicants message you on WhatsApp directly. Employers get 2x more candidates when there is
-                        engagement.
-                    </label>
-                </div>
-            </div>
-            <div class="row my-2">
-                <div class="col-6">
-                    <input type="text" class="form-control" placeholder="Interviewer’s Name">
-                </div>
-            </div>
-            <div class="row my-2">
-                <div class="col-6">
-                    <div class="form-group md-group show-label">
-                        <input class="form-control" type="tel" id="phone" placeholder="e.g. +1 702 123 4567"
-                            value="+1 ">
-                    </div>
-                </div>
-            </div>
-            <div class="row my-2">
-                <div class="col-6">
-                    <input type="text" class="form-control" placeholder="Email Address">
-                </div>
+        <div class="my-3">
+            <h1>Contract Present</h1>
+            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                <input type="radio" class="btn-check" name="contract" id="yes" autocomplete="off" onclick="yes()"
+                    checked>
+                <label class="btn btn-outline-success px-5" for="yes">YES</label>
+
+                <input type="radio" class="btn-check" name="contract" id="no" onclick="no()">
+                <label class="btn btn-outline-success px-5" for="no">NO</label>
             </div>
         </div>
-        <div class="mt-3">
-            <h1>Worl Place Address</h1>
-            <div class="row my-2">
+        <div class="my-3" id="myDIV">
+            <div class="row">
                 <div class="col-6">
-                    <input type="text" class="form-control" placeholder="City">
+                    <h1>Contract Terms</h1>
+                    <textarea name="" id="" class="form-control" rows="4" placeholder="..."></textarea>
+                </div>
+                <div class="col-6">
+                    <h1>User WebPP view</h1>
+                    <textarea name="" id="" class="form-control" rows="4" placeholder="..."></textarea>
                 </div>
             </div>
-            <div class="row my-2">
+            <div class="row mt-3">
                 <div class="col-6">
-                    <input type="text" class="form-control" placeholder="Area">
-                </div>
-            </div>
-            <textarea name="" id="" class="form-control" rows="4" placeholder="Address"></textarea>
-            <div class="m-3">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
-                    <label class="form-check-label mx-3" for="flexCheckIndeterminate">
-                        Use same address for the interview
-                    </label>
+                    <h1>Footer</h1>
+                    <textarea name="" id="" class="form-control" rows="4" placeholder="..."></textarea>
                 </div>
             </div>
         </div>
@@ -140,11 +118,11 @@
 
     <div class="bottom fixed-bottom mt-5">
         <div class="float-end">
-            <a href="{{ url('new_job2') }}" class="btn btn-light mt-4 text-uppercase text-dark shadow-lg p-3">
+            <a href="{{ url('new_job3') }}" class="btn btn-light mt-4 text-uppercase text-dark shadow-lg p-3">
                 Cancel
             </a>
-            <a href="{{ url('new_job4') }}" class="btn btn-success mt-4 mx-4 text-uppercase text-light shadow-lg p-3">
-                Continue
+            <a href="{{ url('job_posting') }}" class="btn btn-success mt-4 mx-4 text-uppercase text-light shadow-lg p-3">
+                Submit
             </a>
         </div>
     </div>
@@ -152,9 +130,12 @@
 @endsection
 @section('javascript')
     <script>
-        // alert("jkhkjs");
         function yes() {
-            alert("kalsdfj")
+            document.getElementById("myDIV").style.visibility = "visible";
+        }
+
+        function no() {
+            document.getElementById("myDIV").style.visibility = "hidden";
         }
     </script>
 @endsection

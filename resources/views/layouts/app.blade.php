@@ -14,6 +14,7 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
+
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
@@ -32,6 +33,8 @@
     .bottom {
         left: 255;
         height: 92px;
+        /* background-color: #47745E; */
+        z-index: -1;
     }
 
     .left {

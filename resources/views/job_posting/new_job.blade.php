@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('status')
-New Job Post
+    New Job Post
 @endsection
 @section('side')
     <div class="card mx-2 my-4">
@@ -143,11 +143,8 @@ New Job Post
         <div class="my-3">
             <h1>Salary</h1>
             <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                <input type="radio" class="btn-check" name="salary" id="min" autocomplete="off">
-                <label class="btn btn-outline-success px-5" for="min">Minimum</label>
-
-                <input type="radio" class="btn-check" name="salary" id="max" autocomplete="off">
-                <label class="btn btn-outline-success px-5" for="max">Maximun</label>
+                <input type="number" class="btn-text text-center" placeholder="Minimum">
+                <input type="number" class="btn-text text-center" placeholder="Maximum">
             </div>
         </div>
         <div class="my-3">
@@ -166,18 +163,22 @@ New Job Post
         <div class="my-3">
             <h1>Experience Required</h1>
             <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                <input type="radio" class="btn-check" name="experiences1" id="fresher" autocomplete="off">
+                <input type="radio" class="btn-check" name="experiences1" id="fresher" autocomplete="off"
+                    onclick="fresher()">
                 <label class="btn btn-outline-success px-5" for="fresher">Fresher</label>
 
-                <input type="radio" class="btn-check" name="experiences1" id="experience" value="experience">
+                <input type="radio" class="btn-check" name="experiences1" id="experience" onclick="experience()"
+                    checked>
                 <label class="btn btn-outline-success px-5" for="experience">Experience</label>
             </div>
-            <div class="input-group">
+            <div class="input-group" id="exp">
                 <div style="border: solid green; padding:3px; background-color: #47AF7C">
-                    <input type="button" value="-" class="button-minus" data-field="quantity">
+                    <input type="button" value="-" class="button-minus" data-field="quantity"
+                        onclick="decrementValue()">
                     <input type="number" step="1" max="" value="1" name="quantity"
-                        class="quantity-field">
-                    <input type="button" value="+" class="button-plus" data-field="quantity">
+                        class="quantity-field" id="number">
+                    <input type="button" value="+" class="button-plus" data-field="quantity"
+                        onclick="incrementValue()">
                 </div>
             </div>
         </div>
@@ -266,16 +267,26 @@ New Job Post
             <h1>Number of Job Openings</h1>
             <div class="input-group">
                 <div style="border: solid green; padding:3px; background-color: #47AF7C">
-                    <input type="button" value="-" class="button-minus" data-field="quantity">
-                    <input type="number" step="1" max="" value="1" name="quantity"
-                        class="quantity-field">
-                    <input type="button" value="+" class="button-plus" data-field="quantity">
+                    <input type="button" value="-" class="button-minus" data-field="quantity"
+                        onclick="decrementjob()">
+                    <input type="number" step="1" max="" value="0" name="quantity"
+                        class="quantity-field" id="jobcount">
+                    <input type="button" value="+" class="button-plus" data-field="quantity"
+                        onclick="incrementjob()">
                 </div>
+            </div>
+            <div class="float-end">
+                <a href="{{ url('job_posting') }}" class="btn btn-light mt-4 text-uppercase text-dark shadow-lg p-3">
+                    Cancel
+                </a>
+                <a href="{{ url('new_job2') }}" class="btn btn-success mt-4 mx-4 text-uppercase text-light shadow-lg p-3">
+                    Continue
+                </a>
             </div>
         </div>
     </div>
 
-    <div class="bottom fixed-bottom mt-5">
+    {{-- <div class="bottom fixed-bottom">
         <div class="float-end">
             <a href="{{ url('job_posting') }}" class="btn btn-light mt-4 text-uppercase text-dark shadow-lg p-3">
                 Cancel
@@ -284,46 +295,44 @@ New Job Post
                 Continue
             </a>
         </div>
-    </div>
+    </div> --}}
 @section('javascript')
 
     <script>
-        function incrementValue(e) {
-            e.preventDefault();
-            var fieldName = $(e.target).data('field');
-            var parent = $(e.target).closest('div');
-            var currentVal = parseInt(parent.find('input[name=' + fieldName + ']').val(), 10);
-
-            if (!isNaN(currentVal)) {
-                parent.find('input[name=' + fieldName + ']').val(currentVal + 1);
-            } else {
-                parent.find('input[name=' + fieldName + ']').val(0);
-            }
+        function experience() {
+            document.getElementById("exp").style.visibility = "visible";
         }
 
-        function decrementValue(e) {
-            e.preventDefault();
-            var fieldName = $(e.target).data('field');
-            var parent = $(e.target).closest('div');
-            var currentVal = parseInt(parent.find('input[name=' + fieldName + ']').val(), 10);
-
-            if (!isNaN(currentVal) && currentVal > 0) {
-                parent.find('input[name=' + fieldName + ']').val(currentVal - 1);
-            } else {
-                parent.find('input[name=' + fieldName + ']').val(0);
-            }
+        function fresher() {
+            document.getElementById("exp").style.visibility = "hidden";
         }
 
-        $('.input-group').on('click', '.button-plus', function(e) {
-            incrementValue(e);
-        });
+        function incrementValue() {
+            var value = parseInt(document.getElementById('number').value, 10);
+            value = isNaN(value) ? 0 : value;
+            value++;
+            document.getElementById('number').value = value;
+        }
 
-        $('.input-group').on('click', '.button-minus', function(e) {
-            decrementValue(e);
-        });
+        function decrementValue() {
+            var value = parseInt(document.getElementById('number').value, 10);
+            value = isNaN(value) ? 0 : value;
+            value--;
+            document.getElementById('number').value = value;
+        }
 
-        if (document.getElementById('experience').checked) {
-            console.log("lkko")
+        function incrementjob() {
+            var value = parseInt(document.getElementById('jobcount').value, 10);
+            value = isNaN(value) ? 0 : value;
+            value++;
+            document.getElementById('jobcount').value = value;
+        }
+
+        function decrementjob() {
+            var value = parseInt(document.getElementById('jobcount').value, 10);
+            value = isNaN(value) ? 0 : value;
+            value--;
+            document.getElementById('jobcount').value = value;
         }
     </script>
 @endsection
