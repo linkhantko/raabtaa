@@ -285,17 +285,6 @@
             </div>
         </div>
     </div>
-
-    {{-- <div class="bottom fixed-bottom">
-        <div class="float-end">
-            <a href="{{ url('job_posting') }}" class="btn btn-light mt-4 text-uppercase text-dark shadow-lg p-3">
-                Cancel
-            </a>
-            <a href="{{ url('new_job2') }}" class="btn btn-success mt-4 mx-4 text-uppercase text-light shadow-lg p-3">
-                Continue
-            </a>
-        </div>
-    </div> --}}
 @section('javascript')
 
     <script>
