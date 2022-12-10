@@ -1,6 +1,9 @@
 @extends('layouts.app')
+@section('status')
+New Job Post
+@endsection
 @section('side')
-    <div class="card mx-2 my-4" style="width: 15rem;">
+    <div class="card mx-2 my-4">
         <div class="text-uppercase text-center my-3">
             Steps
         </div>
@@ -79,7 +82,9 @@
         </ul>
     </div>
 @endsection
+
 @section('content')
+
     <div class="container-fluit mx-3 main mt-3">
         <div>
             <h1 class="my-3">Job Type</h1>
@@ -202,8 +207,8 @@
                 <label class="btn btn-outline-success px-5" for="uni">University</label>
             </div>
         </div>
+        <h1>Language</h1>
         <div class="my-3">
-            <h1>Language</h1>
             <div class="form-check my-2">
                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
                     style="background-color: #47AF7C; border-color:#47AF7C;" checked>
@@ -211,38 +216,48 @@
                     Urdu
                 </label>
             </div>
+        </div>
+        <div class="my-3">
             <div class="form-check my-2">
-                <input class="form-check-input" type="checkbox" value="" id="eng"
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
                     style="background-color: #47AF7C; border-color:#47AF7C;">
-                <label class="form-check-label mx-2" for="eng">
+                <label class="form-check-label mx-2" for="flexCheckDefault">
                     English
                 </label>
             </div>
+        </div>
+        <div class="my-3">
             <div class="form-check my-2">
-                <input class="form-check-input" type="checkbox" value="" id="pun"
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
                     style="background-color: #47AF7C; border-color:#47AF7C;">
-                <label class="form-check-label mx-2" for="pun">
+                <label class="form-check-label mx-2" for="flexCheckDefault">
                     Punjabi
                 </label>
             </div>
+        </div>
+        <div class="my-3">
             <div class="form-check my-2">
-                <input class="form-check-input" type="checkbox" value="" id="sin"
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
                     style="background-color: #47AF7C; border-color:#47AF7C;">
-                <label class="form-check-label mx-2" for="sin">
+                <label class="form-check-label mx-2" for="flexCheckDefault">
                     Sindhi
                 </label>
             </div>
+        </div>
+        <div class="my-3">
             <div class="form-check my-2">
-                <input class="form-check-input" type="checkbox" value="" id="pas"
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
                     style="background-color: #47AF7C; border-color:#47AF7C;">
-                <label class="form-check-label mx-2" for="pas">
+                <label class="form-check-label mx-2" for="flexCheckDefault">
                     Pashto
                 </label>
             </div>
+        </div>
+        <div class="my-3">
             <div class="form-check my-2">
-                <input class="form-check-input" type="checkbox" value="" id="bal"
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
                     style="background-color: #47AF7C; border-color:#47AF7C;">
-                <label class="form-check-label mx-2" for="bal">
+                <label class="form-check-label mx-2" for="flexCheckDefault">
                     Balochi
                 </label>
             </div>

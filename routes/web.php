@@ -34,3 +34,6 @@ Route::get('/new_job', function () {
 Route::get('/new_job2', function () {
     return view('job_posting.new_job2');
 });
+Route::get('/new_job3', function () {
+    return view('job_posting.new_job3');
+});

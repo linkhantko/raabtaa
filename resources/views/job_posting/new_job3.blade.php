@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('status')
-Screening Questions
+Point of contact details
+<p class="h6">Who would be connecting with candudate and hire them for this Job?</p>
 @endsection
 @section('side')
     <div class="card mx-2 my-4">
@@ -84,58 +85,8 @@ Screening Questions
 @endsection
 @section('content')
     <div class="container-fluit mx-3 main mt-3">
-        <button type="button" class="btn btn-lg" style="background-color: #e1eee8" onclick="yes()">
-            YES/NO <span class="badge bg-secondary">+</span>
-        </button>
-        <button type="button" class="btn btn-lg" style="background-color: #e1eee8">
-            MULTIPLE CHOICE <span class="badge bg-secondary">+</span>
-        </button>
-        <button type="button" class="btn btn-lg" style="background-color: #e1eee8">
-            MULTIPLE SELECTION <span class="badge bg-secondary">+</span>
-        </button>
+        <div>
 
-        <div class="card mt-3 shadow" style="background-color: #e1eee8">
-            <div class="card-header">
-                <div class="text-uppercase">QUESTION 1- YES / NO</div>
-                <hr>
-                <div class="row">
-                    <div class="col-6">
-                        <input type="text" name="" id="" class="form-control"
-                            placeholder="Enter your question here">
-                        <span class="text-uppercase text-muted" style="font-size: 8px">select the correct answer</span>
-                    </div>
-                    <div class="row my-2">
-                        <div class="col-5">
-                            <input type="text" name="" id="" class="form-control" value="YES">
-                        </div>
-                        <div class="col-1">
-                            <select name="" id="" class="form-control">
-                                <option value="">Choose</option>
-                                <option value="">1</option>
-                                <option value="">2</option>
-                            </select>
-                        </div>
-                        <div class="col-1 mx-2">
-                            <button class="btn btn-success"> - </button>
-                        </div>
-                    </div>
-                    <div class="row my-2">
-                        <div class="col-5">
-                            <input type="text" name="" id="" class="form-control" value="NO">
-                        </div>
-                        <div class="col-1">
-                            <select name="" id="" class="form-control">
-                                <option value="">Choose</option>
-                                <option value="">1</option>
-                                <option value="">2</option>
-                            </select>
-                        </div>
-                        <div class="col-1 mx-2">
-                            <button class="btn btn-success"> - </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
 
         <div class="bottom fixed-bottom mt-5">
@@ -143,7 +94,7 @@ Screening Questions
                 <a href="{{ url('new_job') }}" class="btn btn-light mt-4 text-uppercase text-dark shadow-lg p-3">
                     Cancel
                 </a>
-                <a href="{{ url('new_job3') }}" class="btn btn-success mt-4 mx-4 text-uppercase text-light shadow-lg p-3">
+                <a href="{{ url('new_job4') }}" class="btn btn-success mt-4 mx-4 text-uppercase text-light shadow-lg p-3">
                     Continue
                 </a>
             </div>

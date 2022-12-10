@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('status')
+Job Posting
+@endsection
 @section('side')
     <div class="m-4">
         <img src="{{ asset('images/job.png') }}" width="32" alt="">
@@ -18,7 +21,7 @@
     </div>
 @endsection
 @section('content')
-    <div class="container main mt-3">
+    <div class="container-fluit main mt-3">
         <table class="table">
             <thead>
                 <tr class="text-center">

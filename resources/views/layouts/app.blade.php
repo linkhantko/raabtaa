@@ -61,7 +61,7 @@
         .left {
             position: absolute;
             left: 0;
-            top: 71px;
+            top: 64px;
             bottom: 0;
             width: 255px;
             background-color: #47AF7C;
@@ -155,6 +155,9 @@
                 <img src="{{ asset('images/logo.png') }}" alt="" width="90">
             </a>
             <div class="container">
+                <h1 class="text-light" style="margin-left:200px">
+                    @yield('status')
+                </h1>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
